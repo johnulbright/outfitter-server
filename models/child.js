@@ -1,0 +1,21 @@
+module.exports=(sequelize,DataTypes)=>{
+    return sequelize.define('child',{
+        name:{
+            type:DataTypes.STRING,
+            allowNull:false,         
+        },
+        username:{
+            type:DataTypes.STRING,
+            allowNull:false,  
+            unique:true       
+        },
+        parentId:{
+            type:DataTypes.NUMBER,
+            allowNull:false,         
+        },
+        deviceId:{
+            type:DataTypes.STRING,
+            allowNull:false,
+        }
+    })
+}
