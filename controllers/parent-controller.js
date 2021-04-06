@@ -1,7 +1,7 @@
 require("dotenv").config();
 
-const router = require("express").Router(); //here
-const Parent = require("../db").import("../models/parent");
+const router = require("express").Router(); 
+const {Parent} = require("../models/index");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 

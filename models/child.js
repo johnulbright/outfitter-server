@@ -1,5 +1,7 @@
-module.exports=(sequelize,DataTypes)=>{
-    return sequelize.define('child',{
+const {DataTypes}=require('sequelize');
+const db=require('../db')
+
+module.exports = db.define('child',{
         name:{
             type:DataTypes.STRING,
             allowNull:false,         
@@ -9,13 +11,8 @@ module.exports=(sequelize,DataTypes)=>{
             allowNull:false,  
             unique:true       
         },
-        parentId:{
-            type:DataTypes.NUMBER,
-            allowNull:false,         
-        },
         deviceId:{
-            type:DataTypes.STRING,
-            allowNull:false,
+            type:DataTypes.INTEGER,
+            allowNull:true,
         }
     })
-}
