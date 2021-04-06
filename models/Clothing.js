@@ -14,7 +14,11 @@ module.exports = db.define('clothing',{
       type:DataTypes.INTEGER,
       allowNull:false
   },
-  birthiconDate:{
+  category:{
+    type:DataTypes.STRING,
+    allowNull:false
+  },
+  icon:{
       type:DataTypes.STRING,
       allowNull:true
   }

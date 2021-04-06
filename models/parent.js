@@ -1,7 +1,7 @@
 const {DataTypes}=require('sequelize');
 const db=require('../db')
 
-module.exports=db.define('parent',{
+module.exports=db.define('Parent',{
         email:{
             type:DataTypes.STRING,
             allowNull:false,

@@ -10,7 +10,7 @@ app.use(express.json());
 
 app.use(require("./middleware/headers"));
 app.use("/parent",controllers.parentController);
-// app.use("/child",child);
+app.use("/profile",controllers.profileController);
 // app.use("/event",event);
 // app.use("/clothing",clothing);
 

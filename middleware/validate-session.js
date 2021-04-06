@@ -1,5 +1,5 @@
 const jwt=require("jsonwebtoken");
-const Parent=require("../db").import("../models/parent");
+const {Parent}=require("../db").import("../models/index");
 
 const validateSession=(req,res,next)=>{
     const token=req.headers.authorization;

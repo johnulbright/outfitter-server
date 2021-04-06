@@ -1,3 +1,5 @@
 module.exports={
-    parentController:require('./parent-controller')
+    parentController:require('./parent-controller'),
+    profileController:require('./profile-controller')
+
 }

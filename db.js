@@ -20,10 +20,4 @@ sequelize.authenticate().then(
 )
 .catch(err=>console.log(err));
 
-// Parent=sequelize.import('./models/parent');
-// Child=sequelize.import('./models/child');
-
-// Parent.hasMany(Child);
-// Child.belongsTo(Parent);
-
 module.exports = sequelize;
