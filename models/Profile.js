@@ -11,7 +11,7 @@ module.exports=db.define('profile',{
             allowNull:false,         
         },
         zipCode:{
-            type:DataTypes.INTEGER,
+            type:DataTypes.STRING,
             allowNull:false,         
         },
         lat:{

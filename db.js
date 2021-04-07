@@ -1,23 +1,5 @@
 const Sequelize = require("sequelize");
 
-const sequelize = new Sequelize(
-  "outfitter-server",
-  "postgres",
-  "password",
-  {
-    host: "localhost",
-    dialect: "postgres",
-  }
-);
-
-sequelize.authenticate().then(
-  function () {
-    console.log("Connected to outfitter-server postgres database!");
-  },
-  function (err) {
-    console.log(err);
-  }
-)
-.catch(err=>console.log(err));
+const sequelize = new Sequelize(process.env.DB_URL)
 
 module.exports = sequelize;
