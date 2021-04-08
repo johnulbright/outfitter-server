@@ -10,7 +10,13 @@ router.post("/signup",async (req,res)=>{
     try{
       const result = await Parent.create({
         email: req.body.parent.email,
-        password: bcrypt.hashSync(req.body.parent.password,13)
+        password: bcrypt.hashSync(req.body.parent.password,13),
+        firstName:req.body.parent.firstName,
+        lastName:req.body.parent.lastName,
+        zipCode:req.body.parent.zipCode,
+        lat:req.body.parent.lat,
+        lon:req.body.parent.lon,
+        timeZone:req.body.parent.timeZone,
         })
       const token= jwt.sign({id:result.id},process.env.JWT_SECRET,{expiresIn:24*60*60});
       const responseObject= {result:result,message:"parent account created successfully",sessionToken:token};
