@@ -10,6 +10,7 @@ router.post("/create",validateSession,async (req,res)=>{
         const result= await Child.create({
             name:req.body.child.name,
             username:req.body.child.username,
+            underwearRemind:req.body.child.underwearRemind,
             deviceId:req.body.child.deviceId,
             parentId:req.parent.id
         })
@@ -46,6 +47,7 @@ router.put("/edit/:id",validateSession,async (req,res)=>{
         const updatedEntry={     
             name:req.body.child.name,
             username:req.body.child.username,
+            underwearRemind:req.body.child.underwearRemind,
             deviceId:req.body.child.deviceId,
         }
         const result = await Child.update(
