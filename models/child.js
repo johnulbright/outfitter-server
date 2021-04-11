@@ -13,10 +13,10 @@ module.exports = db.define('child',{
         },
         underwearRemind:{
             type:DataTypes.BOOLEAN,
-            allowNull:false
+            allowNull:false,
         },
         deviceId:{
-            type:DataTypes.INTEGER,
+            type:DataTypes.STRING,
             allowNull:true,
         }
     })
