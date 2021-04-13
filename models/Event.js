@@ -6,8 +6,12 @@ module.exports = db.define('event',{
             type:DataTypes.STRING,
             allowNull:false,         
         },
-        time:{
-            type:DataTypes.TIME,
+        hours:{
+            type:DataTypes.INTEGER,
+            allowNull:false,    
+        },
+        minutes:{
+            type:DataTypes.INTEGER,
             allowNull:false,    
         }
     })

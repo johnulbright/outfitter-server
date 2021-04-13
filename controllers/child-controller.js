@@ -17,9 +17,17 @@ router.post("/create",validateSession,async (req,res)=>{
         res.status(200).json({result:result,message:"Child created successfully"})
     } catch(err) {res.status(500).json({error:err})}
 })
-
-// Get the all children associated with the user from their session token
+// Get all children for username check
 router.get("/all",validateSession,async (req, res) => {
+    try{
+        const result = await Child.findAll()
+        res.status(200).json(result)
+    } catch (error){
+        res.status(500).json({error:error})
+    }
+ })
+// Get the all children associated with the user from their session token
+router.get("/allofparent",validateSession,async (req, res) => {
    try{
        const result = await Child.findAll({where:{parentId:req.parent.id } })
        res.status(200).json(result)
