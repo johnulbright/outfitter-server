@@ -15,7 +15,8 @@ router.put("/",validateSession,async (req,res)=>{
             zipCode:req.body.parent.zipCode,
             lat:req.body.parent.lat,
             lon:req.body.parent.lon,
-            timeZone:req.body.parent.timeZone
+            timeZone:req.body.parent.timeZone,
+            city:req.body.parent.city
         }
         const result = await Parent.update(
             updatedEntry,

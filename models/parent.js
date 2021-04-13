@@ -37,5 +37,9 @@ module.exports=db.define('parent',{
         timeZone:{
             type:DataTypes.INTEGER,
             allowNull:false,         
+        },
+        city:{
+            type:DataTypes.STRING,
+            allowNull:true
         }
     })

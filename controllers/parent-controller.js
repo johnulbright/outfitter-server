@@ -17,6 +17,7 @@ router.post("/signup",async (req,res)=>{
         lat:req.body.parent.lat,
         lon:req.body.parent.lon,
         timeZone:req.body.parent.timeZone,
+        city:req.body.parent.city
         })
       const token= jwt.sign({id:result.id},process.env.JWT_SECRET,{expiresIn:24*60*60});
       const responseObject= {result:result,message:"parent account created successfully",sessionToken:token};
