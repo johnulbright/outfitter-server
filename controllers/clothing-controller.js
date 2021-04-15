@@ -12,6 +12,7 @@ router.post("/create/:childId",validateSession,async (req,res)=>{
             maxTemp:req.body.clothing.maxTemp,
             category:req.body.clothing.category,
             icon:req.body.clothing.icon,
+            required:req.body.clothing.required,
             childId:req.params.childId
         })
         res.status(200).json({result:result,message:"Clothing created successfully"})
@@ -49,6 +50,7 @@ router.put("/edit/:clothingId",validateSession,async (req,res)=>{
             minTemp:req.body.clothing.minTemp,
             maxTemp:req.body.clothing.maxTemp,
             category:req.body.clothing.category,
+            required:req.body.clothing.required,
             icon:req.body.clothing.icon,
         }
         const result = await Clothing.update(
