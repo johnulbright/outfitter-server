@@ -21,5 +21,9 @@ module.exports = db.define('clothing',{
   icon:{
       type:DataTypes.STRING,
       allowNull:true
+  },
+  required:{
+    type:DataTypes.BOOLEAN,
+    allowNull:false
   }
 })
