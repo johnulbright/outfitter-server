@@ -6,13 +6,21 @@ module.exports = db.define('clothing',{
     type:DataTypes.STRING,
     allowNull:false
   },
-  minTemp:{
+  requiredMin:{
     type:DataTypes.INTEGER,
-    allowNull:false
+    allowNull:true
   },
-  maxTemp:{
+  requiredMax:{
       type:DataTypes.INTEGER,
-      allowNull:false
+      allowNull:true
+  },  
+  optionalMin:{
+    type:DataTypes.INTEGER,
+    allowNull:true
+  },
+  optionalMax:{
+      type:DataTypes.INTEGER,
+      allowNull:true
   },
   category:{
     type:DataTypes.STRING,
@@ -21,9 +29,5 @@ module.exports = db.define('clothing',{
   icon:{
       type:DataTypes.STRING,
       allowNull:true
-  },
-  required:{
-    type:DataTypes.BOOLEAN,
-    allowNull:false
   }
 })

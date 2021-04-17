@@ -5,7 +5,6 @@ const {Parent} = require("../models/index");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 
-
 router.post("/signup",async (req,res)=>{
     try{
       const result = await Parent.create({
@@ -26,7 +25,6 @@ router.post("/signup",async (req,res)=>{
       res.status(500).json({error:error,message:"something went wrong"})
     }
 })
-
 
 router.post("/login", async (req, res) => {
   try{
@@ -57,5 +55,22 @@ router.post("/login", async (req, res) => {
      res.status(500).json({ error: error })
     };
 })
+
+const validateSession = require("../middleware/validate-session");
+
+
+router.get("/",validateSession,async (req, res) => {
+  try{
+      const result = await Parent.findOne({where:{id:req.parent.id} })
+      if(result===null){
+          res.status(403).json({message:"No such user"})
+      } else {
+          res.status(200).json(result);
+      }
+  } catch (error){
+      res.status(500).json({error:error})
+  }
+})
+
 
 module.exports = router
