@@ -29,5 +29,21 @@ module.exports = db.define('clothing',{
   icon:{
       type:DataTypes.STRING,
       allowNull:true
+  },
+  minTemp:{
+    type:DataTypes.INTEGER,
+    allowNull:false
+  },
+  maxTemp:{
+    type:DataTypes.INTEGER,
+    allowNull:false
+  },
+  step1value:{
+    type:DataTypes.INTEGER,
+    allowNull:false
+  },
+  flipped:{
+    type:DataTypes.BOOLEAN,
+    allowNull:false
   }
 })

@@ -13,7 +13,11 @@ router.post("/create/:childId",validateSession,async (req,res)=>{
             requiredMin:req.body.clothing.requiredMin,
             requiredMax:req.body.clothing.requiredMax,
             optionalMin:req.body.clothing.optionalMin,
-            optionalMax:req.body.clothing.optionalMax,
+            optionalMax:req.body.clothing.optionalMax, 
+            minTemp:req.body.clothing.minTemp,
+            maxTemp:req.body.clothing.maxTemp,
+            step1value:req.body.clothing.step1value,
+            flipped:req.body.clothing.flipped,
             childId:req.params.childId
         })
         res.status(200).json({result:result,message:"Clothing created successfully"})
@@ -53,7 +57,11 @@ router.put("/edit/:clothingId",validateSession,async (req,res)=>{
             requiredMin:req.body.clothing.requiredMin,
             requiredMax:req.body.clothing.requiredMax,
             optionalMin:req.body.clothing.optionalMin,
-            optionalMax:req.body.clothing.optionalMax
+            optionalMax:req.body.clothing.optionalMax,
+            minTemp:req.body.clothing.minTemp,
+            maxTemp:req.body.clothing.maxTemp,
+            step1value:req.body.clothing.step1value,
+            flipped:req.body.clothing.flipped,
         }
         const result = await Clothing.update(
             updatedEntry,
