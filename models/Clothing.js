@@ -38,6 +38,10 @@ module.exports = db.define('clothing',{
     type:DataTypes.INTEGER,
     allowNull:false
   },
+  step0values:{
+    type:DataTypes.ARRAY(DataTypes.INTEGER),
+    allowNull:false
+  },
   step1value:{
     type:DataTypes.INTEGER,
     allowNull:false

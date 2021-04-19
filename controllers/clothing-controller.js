@@ -16,6 +16,7 @@ router.post("/create/:childId",validateSession,async (req,res)=>{
             optionalMax:req.body.clothing.optionalMax, 
             minTemp:req.body.clothing.minTemp,
             maxTemp:req.body.clothing.maxTemp,
+            step0values:req.body.clothing.step0values,
             step1value:req.body.clothing.step1value,
             flipped:req.body.clothing.flipped,
             childId:req.params.childId
@@ -60,6 +61,7 @@ router.put("/edit/:clothingId",validateSession,async (req,res)=>{
             optionalMax:req.body.clothing.optionalMax,
             minTemp:req.body.clothing.minTemp,
             maxTemp:req.body.clothing.maxTemp,
+            step0values:req.body.clothing.step0values,
             step1value:req.body.clothing.step1value,
             flipped:req.body.clothing.flipped,
         }
