@@ -13,5 +13,9 @@ module.exports = db.define('event',{
         minutes:{
             type:DataTypes.INTEGER,
             allowNull:false,    
+        },
+        eventTime:{
+            type:DataTypes.DATE,
+            allowNull:false
         }
     })

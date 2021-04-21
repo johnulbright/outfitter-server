@@ -19,8 +19,8 @@ app.use("/event",controllers.eventController);
 
 
 db.authenticate()
-    // .then(()=>db.sync())
-    .then(()=>db.sync({force:true}))
+    .then(()=>db.sync())
+    // .then(()=>db.sync({force:true}))
     .then(()=>{
         app.listen(process.env.PORT,console.log(`[server]: listening on localhost ${process.env.PORT}`))
     })

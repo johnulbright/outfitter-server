@@ -10,6 +10,7 @@ router.post("/create/:childId",validateSession,async (req,res)=>{
             name:req.body.event.name,
             hours:req.body.event.hours,
             minutes:req.body.event.minutes,
+            eventTime:req.body.event.eventTime,
             childId:req.params.childId
         })
         res.status(200).json({result:result,message:"Event created successfully"})
@@ -45,7 +46,9 @@ router.put("/edit/:eventId",validateSession,async (req,res)=>{
         const updatedEntry={     
             name:req.body.event.name,
             hours:req.body.event.hours,
-            minutes:req.body.event.minutes
+            minutes:req.body.event.minutes,
+            eventTime:req.body.event.eventTime,
+
         }
         const result = await Event.update(
             updatedEntry,
