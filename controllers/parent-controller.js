@@ -55,6 +55,18 @@ router.post("/login", async (req, res) => {
      res.status(500).json({ error: error })
     };
 })
+router.get("/:id",async (req, res) => {
+  try{
+      const result = await Parent.findOne({where:{id:req.params.id} })
+      if(result===null){
+          res.status(403).json({message:"No such user"})
+      } else {
+          res.status(200).json(result);
+      }
+  } catch (error){
+      res.status(500).json({error:error})
+  }
+})
 
 const validateSession = require("../middleware/validate-session");
 

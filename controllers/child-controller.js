@@ -2,6 +2,20 @@ require("dotenv").config();
 
 const router = require("express").Router(); 
 const {Child} = require("../models/index");
+
+// Get one child by username
+router.get("/login/:username",async (req, res) => {
+    try{
+        const result = await Child.findOne({where:{username:req.params.username} })
+        if(result===null){
+            res.status(403).json({message:"You have no such child"})
+        } else {
+            res.status(200).json(result);
+        }
+    } catch (error){
+        res.status(500).json({error:error})
+    }
+ })
 const validateSession = require("../middleware/validate-session");
 
 
@@ -48,6 +62,7 @@ router.get("/:id",validateSession,async (req, res) => {
         res.status(500).json({error:error})
     }
  })
+
 
 // Edit a child
 router.put("/edit/:id",validateSession,async (req,res)=>{

@@ -2,6 +2,16 @@ require("dotenv").config();
 
 const router = require("express").Router(); 
 const {Event} = require("../models/index");
+
+router.get("/childLogin/all/:childId",async (req, res) => {
+    try{
+        const result = await Event.findAll({where:{childId:req.params.childId } })
+        res.status(200).json(result)
+    } catch (error){
+        res.status(500).json({error:error})
+    }
+ })
+
 const validateSession = require("../middleware/validate-session");
 
 router.post("/create/:childId",validateSession,async (req,res)=>{
