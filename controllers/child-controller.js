@@ -68,6 +68,7 @@ router.get("/:id",validateSession,async (req, res) => {
 router.put("/edit/:id",validateSession,async (req,res)=>{
     try{
         const updatedEntry={     
+            id:req.params.id,
             name:req.body.child.name,
             username:req.body.child.username,
             underwearRemind:req.body.child.underwearRemind,
@@ -78,12 +79,12 @@ router.put("/edit/:id",validateSession,async (req,res)=>{
             {where:{parentId:req.parent.id,id:req.params.id } }
             )
             if(result[0]===0){
-                res.status(403).json({message:"You may not edit this child"})
+                res.status(403).json(result)
             } else {
-                res.status(200).json({message:"Child updated",updatedEntry:updatedEntry})
+                res.status(200).json({child:updatedEntry,result:result,message:"Child edited successfully"})
             }
     } catch (error){
-        res.status(500).json({error:error})
+        res.status(500).json(error)
     }
 })
 
