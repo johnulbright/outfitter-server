@@ -1,5 +1,5 @@
-const Parent=require('./Parent')
-const Child=require('./Child')
+const Parent=require('./parent')
+const Child=require('./child')
 const Clothing=require('./Clothing')
 const Event=require('./Event')
 
